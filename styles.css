@@ -1,0 +1,36 @@
+.logo{
+    width: 100px;
+}
+
+.nav-bar{
+    list-style: none;
+    display: flex;
+}
+
+li{
+    padding: 0 5px;
+}
+
+.header{
+    display: flex;
+    border: 1px solid black;
+}
+
+.search-bar{
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.food-pic{
+    width: 100px;
+}
+
+.rest-card{
+    margin: 2px;
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+.rest-container{
+    display: flex;
+}
