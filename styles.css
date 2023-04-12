@@ -23,7 +23,7 @@ li{
 }
 
 .food-pic{
-    width: 100px;
+    width: 300px;
 }
 
 .rest-card{
@@ -33,4 +33,5 @@ li{
 }
 .rest-container{
     display: flex;
+    flex-wrap: wrap;
 }
