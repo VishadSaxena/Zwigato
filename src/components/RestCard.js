@@ -17,4 +17,4 @@ const RestCard = (props) => {
     );
 };
 
-export default RestCard;
+export default RestCard;   

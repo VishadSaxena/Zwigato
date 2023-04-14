@@ -1,7 +1,7 @@
 import resList from "../utils/mockData";
 import RestCard from "./RestCard";
 
-export const Searchbar = () => {
+const Searchbar = () => {
     return(
         <div className="search-bar">
             <input type="text" className="search-bar"/>
@@ -10,7 +10,7 @@ export const Searchbar = () => {
     );
 };
 
-export const Body = () => {
+const Body = () => {
     return(
         <div className="body">
             <div>
@@ -25,3 +25,4 @@ export const Body = () => {
     );
 };
 
+export default Body;
