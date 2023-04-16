@@ -1,24 +1,23 @@
-import resList from "../utils/mockData";
+
+import { useState } from "react";
 import RestCard from "./RestCard";
+import resList from "../utils/mockData";
 
-const Searchbar = () => {
-    return(
-        <div className="search-bar">
-            <input type="text" className="search-bar"/>
 
-        </div>
-    );
-};
 
 const Body = () => {
-    return(
+   const [ListOfRest, setListOfRest] = useState(resList);
+        return(
         <div className="body">
             <div>
-                <Searchbar/>
+                <button className="btn-modify" onClick={() => {
+                    const filterList = ListOfRest.filter((res) => res.data.avgRating > 4);
+                    setListOfRest(filterList);
+                }}>Top Restaurant</button>
             </div>
             <div className="rest-container">
                {
-                resList.map(restaurant => (<RestCard key={restaurant.data.id} resData={restaurant} />))
+                ListOfRest.map(restaurant => (<RestCard key={restaurant.data.id} resData={restaurant} />))
                }
             </div>  
         </div>
