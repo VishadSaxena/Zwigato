@@ -19,7 +19,7 @@ const resList =[
         ],
         "costForTwo": 30000,
         "costForTwoString": "₹300 FOR TWO",
-        "deliveryTime": 42,
+        "deliveryTime": "42 ",
         "minDeliveryTime": 42,
         "maxDeliveryTime": 42,
         "slaString": "42 MINS",
@@ -136,7 +136,7 @@ const resList =[
         "hasSurge": false,
         "sla": {
           "restaurantId": "165050",
-          "deliveryTime": 42,
+          "deliveryTime": "42 ",
           "minDeliveryTime": 42,
           "maxDeliveryTime": 42,
           "lastMileTravel": 9.899999618530273,
@@ -148,7 +148,7 @@ const resList =[
           "iconType": "EMPTY"
         },
         "promoted": true,
-        "avgRating": "4.2",
+        "avgRating": "4.2 ",
         "totalRatings": 10000,
         "new": false
       },
@@ -286,7 +286,7 @@ const resList =[
         "hasSurge": false,
         "sla": {
           "restaurantId": "206000",
-          "deliveryTime": 25,
+          "deliveryTime": "25 ",
           "minDeliveryTime": 25,
           "maxDeliveryTime": 25,
           "lastMileTravel": 0.699999988079071,
@@ -298,7 +298,7 @@ const resList =[
           "iconType": "EMPTY"
         },
         "promoted": false,
-        "avgRating": "3.9",
+        "avgRating": "3.9 ",
         "totalRatings": 1000,
         "new": false
       },
@@ -323,7 +323,7 @@ const resList =[
         ],
         "costForTwo": 20000,
         "costForTwoString": "₹200 FOR TWO",
-        "deliveryTime": 28,
+        "deliveryTime": "28 ",
         "minDeliveryTime": 28,
         "maxDeliveryTime": 28,
         "slaString": "28 MINS",
@@ -435,7 +435,7 @@ const resList =[
         "hasSurge": false,
         "sla": {
           "restaurantId": "78757",
-          "deliveryTime": 28,
+          "deliveryTime": "28 ",
           "minDeliveryTime": 28,
           "maxDeliveryTime": 28,
           "lastMileTravel": 1.399999976158142,
@@ -447,7 +447,7 @@ const resList =[
           "iconType": "EMPTY"
         },
         "promoted": false,
-        "avgRating": "3.8",
+        "avgRating": "3.8 ",
         "totalRatings": 10000,
         "new": false
       },
