@@ -61,6 +61,12 @@ li{
     height:400px;
     padding: 5px 10px;
     background-color: #f0f0f0;
-    /*border: 1px solid black;*/
 }
 
+.btnLogin{
+    padding: 0 2px;
+    margin: 0 10px;
+    width: auto;
+    height:max-content;
+    cursor: pointer;
+}
