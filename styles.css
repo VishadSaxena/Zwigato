@@ -28,6 +28,10 @@ li{
     width: 200px;
 }
 
+.btn-modify{
+    margin: 5px;
+}
+
 .rest-card{
     width: 200px;
     height:400px;
@@ -45,9 +49,6 @@ li{
 .rest-container{ 
     display: flex;
     flex-wrap: wrap;
-}
-.btn-modify{
-    margin: 5px;
 }
 
 .shimmer-container{
@@ -68,5 +69,15 @@ li{
     margin: 0 10px;
     width: auto;
     height:max-content;
+    cursor: pointer;
+}
+
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search{
+    margin: 5px;
     cursor: pointer;
 }
