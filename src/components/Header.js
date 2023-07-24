@@ -1,8 +1,9 @@
 import { useState,useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-
+``
 
     const [logValue, setLogValue] = useState('Login');
     console.log("useState called");
@@ -16,9 +17,10 @@ const Header = () => {
           src={LOGO_URL}
         ></img>
         <ul className="nav-bar">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Cart</li>
+          <li> <Link to={"/"}> Home </Link></li>
+          <li> <Link to={"/about"}> About Us </Link></li>
+          <li><Link to={"/contact"}> Contacts </Link></li>
+          <li> Cart</li>
           <button className="btnLogin" onClick={()=>{
                 logValue === "Login" ?  setLogValue("Logout") : setLogValue("Login");
                 // log_val = "Logout";
