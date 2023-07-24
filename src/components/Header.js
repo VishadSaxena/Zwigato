@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
 
-    let log_val = "";
 
     const [logValue, setLogValue] = useState('Login');
+    console.log("useState called");
+
+
 
     return (
       <div className="header">
