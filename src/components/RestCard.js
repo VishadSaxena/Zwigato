@@ -3,7 +3,9 @@ import { IMG_URL } from "../utils/constants";
 const RestCard = (props) => {
     const {resData} = props;
 
-    const {cloudinaryImageId, name, avgRating, cuisines, deliveryTime} = resData?.data;
+    const {cloudinaryImageId, name, avgRating, cuisines} = resData?.info;
+
+    const {deliveryTime} =resData?.info?.sla;
 
     return(
         <div className="rest-card">
@@ -18,3 +20,4 @@ const RestCard = (props) => {
 };
 
 export default RestCard;   
+

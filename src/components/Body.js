@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from "react";
 import RestCard from "./RestCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 const Body = () => {
@@ -20,17 +20,17 @@ const Body = () => {
 
    const fetchData = async () => {
     
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.834702025354822&lng=80.88480837643147&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6342587&lng=85.0584152&page_type=DESKTOP_WEB_LISTING");
 
     const json = await data.json();
 
-    setListOfRest(json?.data?.cards[2]?.data?.data?.cards);
+    setListOfRest(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-    setFilteredListOfRest(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredListOfRest(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
 
-    if(ListOfRest.length === 0){
+    if(ListOfRest === null){
         return < Shimmer />
     }
 
@@ -45,7 +45,7 @@ const Body = () => {
                         } } 
                         />
                     <button className="search" onClick={ () => {
-                        const filteredRest = ListOfRest.filter((res) =>  res.data.name.toLowerCase().includes(searchItem.toLowerCase()) );
+                        const filteredRest = ListOfRest.filter((res) =>  res.info.name.toLowerCase().includes(searchItem.toLowerCase()) );
 
                         setFilteredListOfRest(filteredRest);
                     }}
@@ -55,13 +55,13 @@ const Body = () => {
                 </div>
                 <div>
                     <button className="btn-modify" onClick={() => {
-                        const filterList = ListOfRest.filter((res) => res.data.avgRating > 4);
+                        const filterList = ListOfRest.filter((res) => res.info.avgRating > 4);
                         setFilteredListOfRest(filterList);
                     }}>Top Restaurant</button>
                 </div>
                 <div className="rest-container">
                 {
-                    filteredListOfRest.map(restaurant => (<RestCard key={restaurant.data.id} resData={restaurant} />) )
+                    filteredListOfRest.map(restaurant => (<Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><RestCard resData={restaurant} /></Link>) )
                 }
                 </div>  
             </div>
