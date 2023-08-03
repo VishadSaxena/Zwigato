@@ -6,16 +6,15 @@ const Header = () => {
 ``
 
     const [logValue, setLogValue] = useState('Login');
-    console.log("useState called");
 
 
 
     return (
       <div className="header">
-        <img className="logo"
-          alt="Logo"
-          src={LOGO_URL}
-        ></img>
+          <img className="logo"
+            alt="Logo"
+            src={LOGO_URL}
+          ></img>
         <ul className="nav-bar">
           <li> <Link to={"/"}> Home </Link></li>
           <li> <Link to={"/about"}> About Us </Link></li>

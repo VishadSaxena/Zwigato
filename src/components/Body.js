@@ -30,7 +30,7 @@ const Body = () => {
 
     }
 
-    if(ListOfRest === null){
+    if(ListOfRest.length === 0){
         return < Shimmer />
     }
 
