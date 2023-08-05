@@ -14,7 +14,7 @@ class UserCardClass extends React.Component {
        // console.log(this.props.name + " Child Constructor");
     }
 
-    async    componentDidMount(){
+    async componentDidMount(){
 
         const data = await fetch(" https://api.github.com/users/VishadSaxena");
         const json = await data.json();

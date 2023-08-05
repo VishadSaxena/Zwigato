@@ -2,36 +2,25 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { MENU_API } from "../utils/constants";
 import { useParams } from "react-router-dom";
+import useRestMenu from "../utils/useRestMenu";
+import useResDetails from "../utils/useResDetails";
 
 const RestMenu = () => {
 
-    const [resMenu, setResMenu]= useState([]);
-    
-    const [resDetails, setResDetails] = useState([]);
-    
     const { resId } = useParams();
- 
-    useEffect(() => {
-        fetchMenu();
-    },[]);
 
+    const resInfo = useRestMenu(resId);
 
-    const fetchMenu = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.834702025354822&lng=80.88480837643147&restaurantId=" + resId +"&catalog_qa=undefined&submitAction=ENTER" );
+    const resDetails = useResDetails(resId);
 
-        const json = await data.json();
+    const {itemCards} = resInfo;
 
+    const {name, cuisines, costForTwoMessage} = resDetails;
 
-        setResDetails(json?.data.cards[0]?.card?.card?.info);
-        setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
-
-    }
-
-  
-    const {itemCards} = resMenu;
-
-    if(resMenu.length === 0)
+    if(resInfo.length === 0)
        return <Shimmer />
+       
+  
 
     return (
 
@@ -39,9 +28,9 @@ const RestMenu = () => {
         <div>
             <div className="restDetails">
 
-                <h1>{resDetails.name}</h1>
-                <h3>{resDetails.cuisines.join(",")}</h3>
-                <h3>{resDetails.costForTwoMessage}</h3>
+                <h1>{name}</h1>
+                <h3>{cuisines + (" ")}</h3>
+                <h3>{costForTwoMessage}</h3>
 
             </div>
             <div className="menu">
