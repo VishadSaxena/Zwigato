@@ -3,10 +3,13 @@ import RestCard from "./RestCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestCards from "../utils/useRestCards";
 
 
 const Body = () => {
-   const [ListOfRest, setListOfRest] = useState([]);
+
+  const [ListOfRest,setListOfRest] = useState([]); 
 
    const [filteredListOfRest, setFilteredListOfRest] = useState([]);
 
@@ -29,6 +32,22 @@ const Body = () => {
     setFilteredListOfRest(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
+
+    
+
+ 
+
+    
+
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === "false")
+    {
+        return (
+        <h1> There seems to be some issue with your connection!!!</h1>
+        );
+    }
+
 
     if(ListOfRest.length === 0){
         return < Shimmer />
