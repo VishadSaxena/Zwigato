@@ -18,8 +18,8 @@ class About extends React.Component{
        // console.log("Parent Render");
 
         return(
-            <div>
-                <h1>
+            <div className="m-4">
+                <h1 className="text-xl">
                     This is a Food Delivery service provider company.
                 </h1>
                 <UserCard name={"Vishad (function)"} Location={"Lucknow(function)"}/>

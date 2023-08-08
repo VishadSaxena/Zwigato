@@ -8,13 +8,15 @@ const RestCard = (props) => {
     const {deliveryTime} =resData?.info?.sla;
 
     return(
-        <div className="rest-card">
-            <img className="food-pic" alt="Food Pic" src={IMG_URL
+        <div className="h-{500px} w-56 p-4 m-4 border-solid bg-orange-200 hover:bg-orange-300 rounded-lg">
+            <img className="food-pic rounded-lg" alt="Food Pic" src={IMG_URL
                 +cloudinaryImageId}></img>
-            <h3>{name}</h3>
-            <h4>{avgRating} stars</h4>
-            <h4>{deliveryTime} mins</h4>
-            <h4>{cuisines.join(", ")}</h4>
+            <h3 className="font-bold mb-4 text-xl">{name}</h3>
+            <div className="flex flex-wrap justify-between py-2">
+                <h4 >{avgRating} stars</h4>
+                <h4>{deliveryTime} mins</h4>
+            </div>
+            <h4 className="font-semibold" >{cuisines.join(", ")}</h4>
         </div>
     );
 };

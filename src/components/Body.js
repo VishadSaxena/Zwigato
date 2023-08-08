@@ -55,15 +55,15 @@ const Body = () => {
 
         return(
         <div className="body">
-            <div className="filter">
-                <div>
-                    <input type="text" value={searchItem} onChange={
+            <div className="filter ">
+                <div className="flex"> 
+                    <input type="text" className="m-4 border-solid border-black rounded-xl" value={searchItem} onChange={
                         (e) => {
                             setSearchItem(e.target.value);
                             console.log("Body Rendered");
                         } } 
                         />
-                    <button className="search" onClick={ () => {
+                    <button className="search py-2 px-4 rounded-xl bg-orange-100 m-2  hover:bg-orange-300" onClick={ () => {
                         const filteredRest = ListOfRest.filter((res) =>  res.info.name.toLowerCase().includes(searchItem.toLowerCase()) );
 
                         setFilteredListOfRest(filteredRest);
@@ -71,14 +71,15 @@ const Body = () => {
                     >
                     Search
                     </button>
+                    <div>
+                        <button className="py-2 px-4 rounded-xl bg-orange-100 m-2  hover:bg-orange-300" onClick={() => {
+                            const filterList = ListOfRest.filter((res) => res.info.avgRating > 4);
+                            setFilteredListOfRest(filterList);
+                         }}>Top Restaurant</button>
+                    </div>
                 </div>
-                <div>
-                    <button className="btn-modify" onClick={() => {
-                        const filterList = ListOfRest.filter((res) => res.info.avgRating > 4);
-                        setFilteredListOfRest(filterList);
-                    }}>Top Restaurant</button>
-                </div>
-                <div className="rest-container">
+                
+                <div className="rest-container flex bg-orange-100 flex-wrap">
                 {
                     filteredListOfRest.map(restaurant => (<Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><RestCard resData={restaurant} /></Link>) )
                 }

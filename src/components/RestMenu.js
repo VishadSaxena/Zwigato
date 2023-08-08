@@ -28,17 +28,18 @@ const RestMenu = () => {
         <div>
             <div className="restDetails">
 
-                <h1>{name}</h1>
-                <h3>{cuisines + (" ")}</h3>
-                <h3>{costForTwoMessage}</h3>
-
+                <h1 className="font-bold text-5xl text-center m-4  bg-orange-200">{name}</h1>
+                <div className="flex flex-wrap justify-between font-normal text-2xl mb-4">
+                    <h3>{cuisines + (" ")}</h3>
+                    <h3>{costForTwoMessage}</h3>
+                </div>
             </div>
-            <div className="menu">
-                <h2>Menu</h2>
+            <div className="min-w-fit border-solid text-center  bg-orange-200">
+                <h2 className="text-center text-3xl mb-4  bg-orange-100">Menu</h2>
                 <ul>
                     {itemCards.map( (item) => 
                     (
-                        <li key={item.card.info.id}>
+                        <li className="m-2" key={item.card.info.id}>
                          {item.card.info.name} -- Rs.
                          {item.card.info.defaultPrice/100 || item.card.info.price/100} </li> 
                     ))}
