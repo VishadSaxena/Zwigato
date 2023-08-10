@@ -14,7 +14,8 @@ const useRestMenu = (resId) => {
 
         const json = await data.json();
 
-        setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
+        //setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR);
+        setResMenu(json.data);
     };
 
 

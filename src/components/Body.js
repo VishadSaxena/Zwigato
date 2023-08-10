@@ -4,7 +4,6 @@ import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import useRestCards from "../utils/useRestCards";
 
 
 const Body = () => {
